@@ -25,44 +25,44 @@ function playRound(playerChoice, computerChoice) {
         }
         round++;
         console.log("Round:", round);
-        console.log("Snapping Turtle picked:", playerChoice);
-        console.log("JD Vance picked:", computerChoice); 
+        console.log("Player picked:", playerChoice);
+        console.log("Computer picked:", computerChoice); 
 
         if (playerChoice === computerChoice) {
-            console.log ("DRAW, FUCKO!"); 
+            console.log ("DRAW"); 
         }    else if (playerChoice === "rock" && computerChoice === "scissors") {
         playerScore++;    
-            console.log ("YOU ARE ALL THAT IS MAN!"); 
+            console.log ("WIN"); 
         }    else if (playerChoice === "paper" && computerChoice === "rock") {
             playerScore++;
-            console.log ("YOUR PENIS IS BIG-TIME!"); 
+            console.log ("WIN"); 
         }   else if (playerChoice === "scissors" && computerChoice === "paper") {
             playerScore++;
-            console.log ("DOG POLICE!"); 
+            console.log ("WIN"); 
         }
              else if (computerChoice === "rock" && playerChoice === "scissors") {
         computerScore++;
-        console.log ("YOUR ASS GOT SACKED!!!");
+        console.log ("LOSE");
     }
         else if (computerChoice === "scissors" && playerChoice === "paper") {
         computerScore++;
-        console.log ("YOUR ASS GOT SACKED!!!");
+        console.log ("LOSE");
         }
         else if (computerChoice === "paper" && playerChoice === "rock") {
         computerScore++;
-        console.log ("YOUR ASS GOT SACKED!!!");
+        console.log ("LOSE");
         }
-         console.log("Snapping Turtle Score", playerScore);
-         console.log("JD Vance score", computerScore);
+         console.log("Player Score", playerScore);
+         console.log("Computer score", computerScore);
 
          if (round === 5) {
             console.log("==== FINAL RESULT ====");
          if (playerScore > computerScore) {
-            console.log("YOU ARE ALL THAT IS MAN!!!")
+            console.log("PLAYER WINS")
          } else if (playerScore < computerScore) {
-            console.log("GO BACK TO THE VALLEY, MAN!!!")
+            console.log("COMPUTER WINS")
          } else {
-            console.log("TIE GAME");
+            console.log("TIE");
          }
          }   
          }
