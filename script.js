@@ -1,5 +1,6 @@
 let playerScore = 0;
 let computerScore = 0;
+let round = 0;
 
 function getRandomNumber() {
     return Math.floor(Math.random() * 3) + 1;
@@ -18,14 +19,20 @@ function getComputerChoice() {
 }
 
 function playRound(playerChoice, computerChoice) {
-    console.log("Snapping Turtle picked:", playerChoice);
-    console.log("JD Vance picked:", computerChoice); 
-    
-    if (playerChoice === computerChoice) {
-        console.log ("DRAW, FUCKO!"); 
+    if (round>= 5) {
+            console.log("GAME OVER");
+            return;
+        }
+        round++;
+        console.log("Round:", round);
+        console.log("Snapping Turtle picked:", playerChoice);
+        console.log("JD Vance picked:", computerChoice); 
+
+        if (playerChoice === computerChoice) {
+            console.log ("DRAW, FUCKO!"); 
         }    else if (playerChoice === "rock" && computerChoice === "scissors") {
         playerScore++;    
-        console.log ("YOU ARE ALL THAT IS MAN!"); 
+            console.log ("YOU ARE ALL THAT IS MAN!"); 
         }    else if (playerChoice === "paper" && computerChoice === "rock") {
             playerScore++;
             console.log ("YOUR PENIS IS BIG-TIME!"); 
@@ -44,8 +51,19 @@ function playRound(playerChoice, computerChoice) {
         else if (computerChoice === "paper" && playerChoice === "rock") {
         computerScore++;
         console.log ("YOUR ASS GOT SACKED!!!");
-
-}
+        }
          console.log("Snapping Turtle Score", playerScore);
          console.log("JD Vance score", computerScore);
-}
+
+         if (round === 5) {
+            console.log("==== FINAL RESULT ====");
+         if (playerScore > computerScore) {
+            console.log("YOU ARE ALL THAT IS MAN!!!")
+         } else if (playerScore < computerScore) {
+            console.log("GO BACK TO THE VALLEY, MAN!!!")
+         } else {
+            console.log("TIE GAME");
+         }
+         }   
+         }
+
